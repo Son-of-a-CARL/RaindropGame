@@ -1,13 +1,15 @@
 class Raindrop {
-  PVector loc, vel, mouse;
+  PVector loc, vel, acc;
   int diam;
   color c;
 
   Raindrop() {
-    diam = 5;
+    diam = 10;
     loc = new PVector(random(diam, width-diam), random(diam, height-diam));
     vel= new PVector(0, random(1));
-    c = color(50, 50, 50);
+    acc = PVector.random2D();
+    acc.mult(.01);
+    c = color(random(255), random(255), random(255));
   }
 
   //after declaring fields and setting up constructors, you can define your methods
@@ -17,6 +19,8 @@ class Raindrop {
     ellipse(loc.x, loc.y, diam, diam);
   }
   void fall() {
+    vel.add(acc);
+    vel.limit(5);
     loc.add(vel);
   }
 
@@ -31,11 +35,16 @@ class Raindrop {
   void reset() {
     loc.y=0;
     loc.add(vel);
+    vel.add(acc);
   }
 
 
-boolean isInContactWith() {
- if( loc.dist(mouse){
-   return true;
-}
+  boolean isInContactWith(Catcher thing) {
+
+    if (thing.loc.dist(loc) < thing.diam/2 + diam/2 ) {
+      return true;
+    } else { 
+      return false;
+    }
+  }
 }
