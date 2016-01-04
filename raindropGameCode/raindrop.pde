@@ -1,10 +1,10 @@
 class Raindrop {
   PVector loc, vel, acc;
-  int diam;
+  float diam;
   color c;
 
   Raindrop(float x,float y) {
-    diam = 20;
+    diam = random(20,50);
     loc = new PVector(random(diam, width-diam), random(diam, height-diam));
     vel= new PVector(0, random(1));
     acc = PVector.random2D();

@@ -1,7 +1,7 @@
 class Catcher {
   PVector loc;
   color c;
-  int diam;
+  float diam;
 
   Catcher() {
     diam = 100;
@@ -18,4 +18,8 @@ class Catcher {
   void update() {
     loc.set(mouseX,mouseY);
     }
+
+void grow(){
+  diam=diam+0.1;
+}
 }
