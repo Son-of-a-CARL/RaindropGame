@@ -5,21 +5,21 @@ class Raindrop {
 
   Raindrop(float x,float y) {
     diam = random(20,50);
-    loc = new PVector(random(diam, width-diam), random(diam, height-diam));
-    vel= new PVector(0, random(1));
-    acc = PVector.random2D();
-    acc.mult(.01);
-    c = color(random(255), random(255), random(255));
+    loc = new PVector(random(diam, width-diam), 0);
+    vel= new PVector(0, random(15));
+    c = color(0, 0, random(255));
   }
 
   //after declaring fields and setting up constructors, you can define your methods
   void display() {
     fill(c);
     noStroke();
-    ellipse(loc.x, loc.y, diam, diam);
+     for (int i = 2; i < diam/2; i++ ) {
+      ellipse(loc.x,loc.y + i*4,i*2,i*2);
+    }
+
   }
   void fall() {
-    vel.add(acc);
     vel.limit(5);
     loc.add(vel);
   }
@@ -35,7 +35,7 @@ class Raindrop {
   void reset() {
     loc.y=0;
     loc.add(vel);
-    vel.add(acc);
+   
   }
 
 
