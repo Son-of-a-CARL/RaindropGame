@@ -1,5 +1,5 @@
 class Score {
-  int score5=0;
+  int score=0;
 
   Score() {
     fill(0);
@@ -10,19 +10,19 @@ class Score {
   void display() {
     fill(0);
     text("Score:", 50, 50);
-    text(score5, 115, 50);
+    text(score, 115, 50);
   }
 
   void addscore() {
-    score5=score5+1;
+    score=score+1;
   }
   void subScore() {
-    score5=score5-2;
+    score=score-2;
   }
 
   boolean scoref (Catcher thing) {
 
-    if (score5==30) {
+    if (score==30) {
       return true;
     } else { 
       return false;
@@ -30,7 +30,7 @@ class Score {
   }
   boolean scoref2 (Catcher thing) {
 
-    if (score5<0) {
+    if (score<0) {
       return true;
      
     } else { 

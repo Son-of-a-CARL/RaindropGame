@@ -61,28 +61,36 @@ void draw() {
 
     if (s.scoref(c)) {
       mode=2;
-
-      if (mode==2) {
-        background(0);
-        fill(255);
-        text("HOLLA YOU WON CONGRATS!!!", width/2, height/3);
-        text("Exit window and run program again to play again", width/2, height/2);
-        text("sorry couldnt loop it back to start screen :(", width/2, height/2+40);
-      }
     }
 
     if (s.scoref2(c)) {
       mode=3;
-      s.score5=0;
+      s.score = 0;
+     
     }
+  }
 
-
-    if (mode==3) {
-      background(0);
-      fill(255);
-      text("YOU LOSE BETTER LUCK NEXT TIME", width/2, height/3);
-      text("Exit window and run program again to play again ", width/2, height/2);
-      text("sorry couldnt loop it back to start screen :(", width/2, height/2+40);
+  if (mode==2) {
+    background(0);
+    fill(255);
+    text("HOLLA YOU WON CONGRATS!!!", width/2, height/3);
+    text("Click To Play Again!!!", width/2, height/2);
+    text("Have Fun :)", width/2, height/2+40);
+    if (mousePressed) {
+      mode=0;
+      s.score=0;
+    }
+  }
+  if (mode==3) {
+  
+    background(0);
+    fill(255);
+    text("YOU LOSE BETTER LUCK NEXT TIME", width/2, height/3);
+    text("Click Screen To Play Again ", width/2, height/2);
+    text("you can do it this time :)", width/2, height/2+40);
+    if (mousePressed) {
+      mode = 0;
+      s.score = 0;
     }
   }
 }
