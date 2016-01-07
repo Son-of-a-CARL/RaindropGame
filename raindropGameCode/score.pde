@@ -13,16 +13,16 @@ class Score {
     text(score, 115, 50);
   }
 
-  void addscore() {
+  void addscore() {  //adds score
     score=score+1;
   }
-  void subScore() {
+  void subScore() {  //subtract score
     score=score-2;
   }
 
   boolean scoref (Catcher thing) {
 
-    if (score==30) {
+    if (score==30) {     //win score
       return true;
     } else { 
       return false;
@@ -30,7 +30,7 @@ class Score {
   }
   boolean scoref2 (Catcher thing) {
 
-    if (score<0) {
+    if (score<0) {  //lose score
       return true;
      
     } else { 

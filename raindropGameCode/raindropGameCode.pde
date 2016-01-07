@@ -59,14 +59,13 @@ void draw() {
       }
     }
 
-    if (s.scoref(c)) {
+    if (s.scoref(c)) {  //if the score is the winscore display win screen
       mode=2;
     }
 
-    if (s.scoref2(c)) {
+    if (s.scoref2(c)) {        //if you lose display the lose  
       mode=3;
       s.score = 0;
-     
     }
   }
 
@@ -74,23 +73,25 @@ void draw() {
     background(0);
     fill(255);
     text("HOLLA YOU WON CONGRATS!!!", width/2, height/3);
-    text("Click To Play Again!!!", width/2, height/2);
+    text("Click To Play Again!!!", width/2, height/2);  //win screen
     text("Have Fun :)", width/2, height/2+40);
     if (mousePressed) {
-      mode=0;
-      s.score=0;
+      mode=0;    //if you click mouse go back to start screen
+      s.score=0;  //reset ther score
+      rain.clear();  //reset the raindrops
     }
   }
   if (mode==3) {
-  
+
     background(0);
     fill(255);
     text("YOU LOSE BETTER LUCK NEXT TIME", width/2, height/3);
-    text("Click Screen To Play Again ", width/2, height/2);
+    text("Click Screen To Play Again ", width/2, height/2);  //lose screen
     text("you can do it this time :)", width/2, height/2+40);
     if (mousePressed) {
-      mode = 0;
-      s.score = 0;
+      mode = 0;  //if you click mouse go back to start screen
+      s.score = 0;  //reset ther score
+      rain.clear();  //reset the raindrops
     }
   }
 }

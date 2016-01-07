@@ -1,3 +1,4 @@
+
 class Catcher {
   PVector loc;
   color c;

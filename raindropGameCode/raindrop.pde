@@ -24,25 +24,14 @@ class Raindrop {
     loc.add(vel);
   }
 
-  void bounceoffwalls() {
-    if (loc.x + diam/2 >= width) {
-      vel.x = -abs(vel.x);    //if the ball hits the right wall, assign x velocity the negative version of itself
-    } else if (loc.x - diam/2 <= 0) {
-      vel.x = abs(vel.x);     //if the ball hits the left wall, assign x velocity the positive version of itself
-    }
-  }
-
   void reset() {
     loc.y=0;
-    loc.add(vel);
-   
+    loc.add(vel); 
   }
 
-
   boolean isInContactWith(Catcher thing) {
-
     if (thing.loc.dist(loc) < thing.diam/2 + diam/2 ) {
-      return true;
+      return true;    //if it hits any part of the catcher reset the raindrop
     } else { 
       return false;
     }
